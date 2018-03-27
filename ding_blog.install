@@ -31,7 +31,6 @@ function _ding_blog_add_category_terms() {
   );
   taxonomy_vocabulary_save($vocabulary);
 
-
   $category = taxonomy_vocabulary_machine_name_load('blog_category');
   $terms = array(
     t('Film'),
