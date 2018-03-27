@@ -1,0 +1,47 @@
+<?php
+/**
+ * @file
+ * Actions performed on module install/uninstall.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ding_blog_install() {
+  _ding_blog_add_category_terms();
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function ding_blog_uninstall() {
+  // Delete category and its terms.
+  $category = taxonomy_vocabulary_machine_name_load('blog_category');
+  taxonomy_vocabulary_delete($category->vid);
+}
+
+/**
+ * Create default blog categories.
+ */
+function _ding_blog_add_category_terms() {
+  $vocabulary = (object) array(
+    'name' => 'Blog Category',
+    'description' => 'Blog post categories.',
+    'machine_name' => 'blog_category',
+  );
+  taxonomy_vocabulary_save($vocabulary);
+
+
+  $category = taxonomy_vocabulary_machine_name_load('blog_category');
+  $terms = array(
+    t('Film'),
+    t('Skønlitteratur'),
+    t('Krimi'),
+  );
+  foreach ($terms as $name) {
+    $term = new stdClass();
+    $term->name = $name;
+    $term->vid = $category->vid;
+    taxonomy_term_save($term);
+  }
+}
