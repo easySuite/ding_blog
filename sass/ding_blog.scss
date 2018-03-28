@@ -1,0 +1,31 @@
+.page-node-add-blog {
+  .content-wrapper .form-item {
+    max-width: 100%; 
+  }
+
+  .form-item-field-ding-blog-list-image-und-0 label,
+  input#edit-submit,
+  input#edit-preview {
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  .filter-guidelines,
+  .filter-help {
+    display: none;
+  }
+
+  div.form-media {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -20px;
+  }
+
+  fieldset .fieldset-wrapper {
+    width: 100%;
+  }
+
+  .field-type-taxonomy-term-reference {
+    width: 25%;
+  }
+}

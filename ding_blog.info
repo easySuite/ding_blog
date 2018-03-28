@@ -13,6 +13,7 @@ dependencies[] = secure_permissions
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = ting_reference
+stylesheets[all][] = css/ding_blog.css
 features[ctools][] = field_group:field_group:1
 features[features_api][] = api:2
 features[field_base][] = field_ding_blog_body

@@ -1,0 +1,24 @@
+.page-node-add-blog .content-wrapper .form-item {
+  max-width: 100%;
+}
+.page-node-add-blog .form-item-field-ding-blog-list-image-und-0 label,
+.page-node-add-blog input#edit-submit,
+.page-node-add-blog input#edit-preview {
+  display: inline-block;
+  margin-right: 30px;
+}
+.page-node-add-blog .filter-guidelines,
+.page-node-add-blog .filter-help {
+  display: none;
+}
+.page-node-add-blog div.form-media {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -20px;
+}
+.page-node-add-blog fieldset .fieldset-wrapper {
+  width: 100%;
+}
+.page-node-add-blog .field-type-taxonomy-term-reference {
+  width: 25%;
+}
