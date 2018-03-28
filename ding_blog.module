@@ -5,3 +5,18 @@
  */
 
 include_once 'ding_blog.features.inc';
+
+/**
+ * Implements hook_secure_permissions().
+ */
+function ding_blog_secure_permissions($role) {
+  $permissions = array(
+    'staff' => array(
+      'access media browser',
+    ),
+  );
+
+  if (isset($permissions[$role])) {
+    return $permissions[$role];
+  }
+}

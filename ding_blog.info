@@ -9,6 +9,7 @@ dependencies[] = image
 dependencies[] = media
 dependencies[] = node
 dependencies[] = options
+dependencies[] = secure_permissions
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = ting_reference
