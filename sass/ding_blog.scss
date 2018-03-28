@@ -1,11 +1,13 @@
 .page-node-add-blog {
-  .content-wrapper .form-item {
-    max-width: 100%; 
+  .content-wrapper {
+   .form-item {
+      max-width: 100%; 
+    }
   }
 
   .form-item-field-ding-blog-list-image-und-0 label,
-  input#edit-submit,
-  input#edit-preview {
+  #edit-submit,
+  #edit-preview {
     display: inline-block;
     margin-right: 30px;
   }

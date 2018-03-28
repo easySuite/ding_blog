@@ -2,8 +2,8 @@
   max-width: 100%;
 }
 .page-node-add-blog .form-item-field-ding-blog-list-image-und-0 label,
-.page-node-add-blog input#edit-submit,
-.page-node-add-blog input#edit-preview {
+.page-node-add-blog #edit-submit,
+.page-node-add-blog #edit-preview {
   display: inline-block;
   margin-right: 30px;
 }
