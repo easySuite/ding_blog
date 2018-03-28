@@ -13,6 +13,19 @@ function ding_blog_secure_permissions($role) {
   $permissions = array(
     'staff' => array(
       'access media browser',
+      'create files',
+      'edit own image files',
+      'delete own image files',
+      'download own image files',
+      'edit own video files',
+      'delete own video files',
+      'download own video files',
+      'edit own audio files',
+      'delete own audio files',
+      'download own audio files',
+      'edit own document files',
+      'delete own document files',
+      'download own document files',
     ),
   );
 
