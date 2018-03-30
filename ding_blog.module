@@ -65,7 +65,33 @@ function ding_blog_preprocess_node(&$variables) {
 }
 
 /**
- * Ding blog.
+ * Implements hook_preprocess_HOOK().
+ */
+function ding_blog_preprocess_ding2_site_template(&$variables) {
+  if (count($variables['display']->panels) > 1) {
+    return;
+  }
+
+  $args = arg();
+  if ($args[0] == 'user' && !empty($args[1])) {
+    $user = user_load((int) $args[1]);
+    if (in_array('staff', $user->roles)) {
+      $view = views_get_view('ding_blog');
+      $result = $view->preview('ding_blog_list_user', array($args[1]));
+
+
+      $output = '<div class="grid-medium panel-pane pane-views-panes pane-ding-blog1-ding-blog-list-user">';
+      $output .= '<div class="panel-pane-inner">';
+      $output .= $result;
+      $output .= '</div></div>';
+
+      $variables['content']['content'] .= $output;
+    }
+  }
+}
+
+/**
+ * Ding blog preprocess function.
  */
 function ding_blog_preprocess__node__blog(&$variables) {
   $variables['blog_submitted'] = format_date($variables['created'], 'ding_date_only_version2');
