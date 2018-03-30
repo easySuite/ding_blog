@@ -80,7 +80,7 @@ function ding_blog_preprocess_ding2_site_template(&$variables) {
       $result = $view->preview('ding_blog_list_user', array($args[1]));
 
 
-      $output = '<div class="grid-medium panel-pane pane-views-panes pane-ding-blog1-ding-blog-list-user">';
+      $output = '<div class="grid-medium panel-pane pane-views-panes pane-ding-blog-ding-blog-list-user">';
       $output .= '<div class="panel-pane-inner">';
       $output .= $result;
       $output .= '</div></div>';

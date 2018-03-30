@@ -103,6 +103,59 @@ function ding_blog_views_default_views() {
       'label' => 'User: Uid',
     ),
   );
+
+  /* Display: User blog list by category */
+  $handler = $view->new_display('panel_pane', 'User blog list by category', 'user_blog_list_categories');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'grid-medium';
+  $handler->display->display_options['display_description'] = 'Get all blogs grouped by category of the specified user id.';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['grouping'] = array(
+    0 => array(
+      'field' => 'field_ding_blog_category',
+      'rendered' => 1,
+      'rendered_strip' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['uses_fields'] = TRUE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Category */
+  $handler->display->display_options['fields']['field_ding_blog_category']['id'] = 'field_ding_blog_category';
+  $handler->display->display_options['fields']['field_ding_blog_category']['table'] = 'field_data_field_ding_blog_category';
+  $handler->display->display_options['fields']['field_ding_blog_category']['field'] = 'field_ding_blog_category';
+  $handler->display->display_options['fields']['field_ding_blog_category']['label'] = '';
+  $handler->display->display_options['fields']['field_ding_blog_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'User: Uid',
+    ),
+  );
   $translatables['ding_blog'] = array(
     t('Master'),
     t('more'),
@@ -124,6 +177,8 @@ function ding_blog_views_default_views() {
     t('All'),
     t('User blog list'),
     t('View panes'),
+    t('User blog list by category'),
+    t('Get all blogs grouped by category of the specified user id.'),
   );
   $export['ding_blog'] = $view;
 
