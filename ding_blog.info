@@ -14,6 +14,7 @@ dependencies[] = options
 dependencies[] = secure_permissions
 dependencies[] = taxonomy
 dependencies[] = ting_reference
+stylesheets[all][] = css/ding_blog.css
 dependencies[] = view_unpublished
 dependencies[] = views
 dependencies[] = views_content
