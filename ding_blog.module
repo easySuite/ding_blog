@@ -105,7 +105,10 @@ function ding_blog_preprocess__node__blog(&$variables) {
         $image_title = $variables['field_ding_blog_list_image'][0]['title'];
 
         // If in view with large first teaser and first in view.
-        $current_view = $variables['view']->current_display;
+        $current_view = '';
+        if (!empty($variables['view'])) {
+          $current_view = $variables['view']->current_display;
+        }
         $views_with_large_first = array('ding_blog_frontpage_list');
         if (in_array($current_view, $views_with_large_first) && $variables['view']->result[0]->nid == $variables['nid']) {
           $img_url = image_style_url('ding_panorama_list_large_wide', $uri);
