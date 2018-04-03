@@ -171,6 +171,11 @@ function ding_blog_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'More Blog entries by this author';
   $handler->display->display_options['display_description'] = 'Select related blog posts of the author.';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;
@@ -178,6 +183,7 @@ function ding_blog_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -225,27 +231,26 @@ function ding_blog_views_default_views() {
   $handler->display->display_options['argument_input'] = array(
     'uid' => array(
       'type' => 'context',
-      'context' => 'entity:user.uid',
-      'context_optional' => 1,
+      'context' => 'entity:relation.endpoints-source-user',
+      'context_optional' => 0,
       'panel' => '0',
       'fixed' => '',
       'label' => 'Content: Author uid',
     ),
-    'nid' => array(
-      'type' => 'context',
-      'context' => 'entity:node.nid',
-      'context_optional' => 0,
-      'panel' => '0',
-      'fixed' => '',
-      'label' => 'Content: Nid',
-    ),
   );
+  $handler->display->display_options['link_to_view'] = '1';
+  $handler->display->display_options['inherit_panels_path'] = '1';
 
   /* Display: Related blogs by category */
   $handler = $view->new_display('panel_pane', 'Related blogs by category', 'related_category_blogs');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Blog entries within the same category';
   $handler->display->display_options['display_description'] = 'Select related blog posts of the same category.';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '8';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '1';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['uses_fields'] = TRUE;

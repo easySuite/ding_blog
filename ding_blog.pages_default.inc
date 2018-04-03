@@ -254,12 +254,16 @@ function ding_blog_default_page_manager_handlers() {
   $pane->access = array();
   $pane->configuration = array(
     'context' => array(
-      0 => 'context_user_1',
-      1 => 'argument_entity_id:node_1',
+      0 => 'argument_entity_id:node_1',
     ),
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'link_to_view' => 0,
+    'fields_override' => array(
+      'title' => 0,
+      'uid' => 1,
+    ),
   );
   $pane->cache = array();
   $pane->style = array(
