@@ -45,5 +45,63 @@
         margin-right: 0;
       }
     }
+    .field-name-field-ding-news-blogs-headline,
+    .field-name-field-ding-event-blogs-headline {
+      clear: left;
+    }
+    .field-name-field-ding-news-blogs,
+    .field-name-field-ding-event-blogs {
+      float: left;
+    }
+    .node-blog {
+      .inner {
+        max-width: 1124px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+
+        .ding-blog-left {
+          float: left;
+          display: block;
+          margin-right: 2.4911%;
+          width: 40.21352%;
+          min-height: 1px;
+        }
+        .ding-blog-right {
+          float: left;
+          display: block;
+          margin-right: 2.4911%;
+          width: 40.21352%;
+        }
+        .field-name-field-ding-blog-materials {
+          width: 100%;
+          float: left;
+          padding-top: 20px;
+          .field-label {
+            font-family: FaktPro-Light,sans-serif;
+            font-size: 40px;
+            line-height: 44px;
+            color: #262627;
+            margin-bottom: 20px;
+          }
+          .field-item {
+            float: left;
+            display: block;
+            margin-right: 2.4911%;
+            width: 23.13167%;
+            margin-bottom: 2.4911%;
+          }
+        }
+      }
+    }
+    .view-display-id-related_author_blogs {
+      .views-row {
+        float: left;
+      }
+    }
+  }
+  .footer {
+    float: left;
+    width: 100%;
   }
 }
