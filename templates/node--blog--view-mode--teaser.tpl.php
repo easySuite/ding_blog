@@ -99,7 +99,7 @@
         <div class="info-dash">-</div>
         <div class="submitted"><?php print $blog_submitted; ?></div>
       </div>
-      <?php print render($content['field_ding_blog_lead']); ?>
+      <?php print render($content['body']); ?>
     </div>
   </a>
 </article>
