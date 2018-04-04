@@ -1,0 +1,107 @@
+.page-node-add-blog {
+  .content-wrapper {
+   .form-item {
+      max-width: 100%; 
+    }
+  }
+
+  .form-item-field-ding-blog-list-image-und-0 label,
+  #edit-submit,
+  #edit-preview {
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  .filter-guidelines,
+  .filter-help {
+    display: none;
+  }
+
+  div.form-media {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -20px;
+  }
+
+  fieldset .fieldset-wrapper {
+    width: 100%;
+  }
+
+  .field-type-taxonomy-term-reference {
+    width: 25%;
+  }
+}
+
+.ding2-site-template {
+  .ding2-site-template {
+    .view.grid-medium.view-display-id-user_blog_list_categories {
+      h3 {
+        float: left;
+        width: 100%;
+      }
+      .views-row:nth-child(3n+1) {
+        clear: none;
+        margin-left: 2.4911%;
+        margin-right: 0;
+      }
+    }
+    .field-name-field-ding-news-blogs-headline,
+    .field-name-field-ding-event-blogs-headline {
+      clear: left;
+    }
+    .field-name-field-ding-news-blogs,
+    .field-name-field-ding-event-blogs {
+      float: left;
+    }
+    .node-blog {
+      .inner {
+        max-width: 1124px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+
+        .ding-blog-left {
+          float: left;
+          display: block;
+          margin-right: 2.4911%;
+          width: 40.21352%;
+          min-height: 1px;
+        }
+        .ding-blog-right {
+          float: left;
+          display: block;
+          margin-right: 2.4911%;
+          width: 40.21352%;
+        }
+        .field-name-field-ding-blog-materials {
+          width: 100%;
+          float: left;
+          padding-top: 20px;
+          .field-label {
+            font-family: FaktPro-Light,sans-serif;
+            font-size: 40px;
+            line-height: 44px;
+            color: #262627;
+            margin-bottom: 20px;
+          }
+          .field-item {
+            float: left;
+            display: block;
+            margin-right: 2.4911%;
+            width: 23.13167%;
+            margin-bottom: 2.4911%;
+          }
+        }
+      }
+    }
+    .view-display-id-related_author_blogs {
+      .views-row {
+        float: left;
+      }
+    }
+  }
+  .footer {
+    float: left;
+    width: 100%;
+  }
+}
