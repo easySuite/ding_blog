@@ -76,13 +76,16 @@ function ding_blog_default_page_manager_handlers() {
   $display->content['new-0869abb2-82e8-4404-a67c-c4d02e01367f'] = $pane;
   $display->panels['content'][0] = 'new-0869abb2-82e8-4404-a67c-c4d02e01367f';
   $pane = new stdClass();
-  $pane->pid = 'new-c008434f-a252-491b-b71d-daf35edb7fbd';
+  $pane->pid = 'new-e21ced7a-07d0-44df-b800-47fa0965e639';
   $pane->panel = 'content';
   $pane->type = 'views_panes';
-  $pane->subtype = 'ding_blog-user_blog_list_categories';
+  $pane->subtype = 'ding_blog-ding_blog_list_user';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_uid_1',
+    ),
     'override_title' => 0,
     'override_title_text' => '',
     'override_title_heading' => 'h2',
@@ -95,9 +98,9 @@ function ding_blog_default_page_manager_handlers() {
   $pane->extras = array();
   $pane->position = 1;
   $pane->locks = array();
-  $pane->uuid = 'c008434f-a252-491b-b71d-daf35edb7fbd';
-  $display->content['new-c008434f-a252-491b-b71d-daf35edb7fbd'] = $pane;
-  $display->panels['content'][1] = 'new-c008434f-a252-491b-b71d-daf35edb7fbd';
+  $pane->uuid = 'e21ced7a-07d0-44df-b800-47fa0965e639';
+  $display->content['new-e21ced7a-07d0-44df-b800-47fa0965e639'] = $pane;
+  $display->panels['content'][1] = 'new-e21ced7a-07d0-44df-b800-47fa0965e639';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
