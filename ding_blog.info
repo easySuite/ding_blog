@@ -43,6 +43,7 @@ features[field_group][] = group_left|node|blog|default
 features[field_group][] = group_related_content|node|ding_event|form
 features[field_group][] = group_related_content|node|ding_news|form
 features[field_group][] = group_right|node|blog|default
+features[field_instance][] = node-blog-field_blog_body
 features[field_instance][] = node-blog-field_ding_blog_category
 features[field_instance][] = node-blog-field_ding_blog_list_image
 features[field_instance][] = node-blog-field_ding_blog_materials
