@@ -51,7 +51,7 @@ function ding_blog_field_group_info() {
     'label' => 'Content',
     'weight' => '2',
     'children' => array(
-      0 => 'body',
+      0 => 'field_blog_body',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

@@ -1,10 +1,24 @@
 <?php
+
 /**
  * @file
  * Code for the Ding Blog feature.
  */
 
 include_once 'ding_blog.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function ding_blog_menu() {
+  $items['autocomplete/blogauthors'] = array(
+    'title' => 'Blog authors autocomplete',
+    'page callback' => '_ding_blog_authors_autocomplete',
+    'access arguments' => array('use autocomplete'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
 
 /**
  * Implements hook_secure_permissions().
@@ -79,7 +93,6 @@ function ding_blog_preprocess_ding2_site_template(&$variables) {
       $view = views_get_view('ding_blog');
       $result = $view->preview('ding_blog_list_user', array($args[1]));
 
-
       $output = '<div class="grid-medium panel-pane pane-views-panes pane-ding-blog-ding-blog-list-user">';
       $output .= '<div class="panel-pane-inner">';
       $output .= $result;
@@ -129,4 +142,96 @@ function ding_blog_preprocess__node__blog(&$variables) {
       }
       break;
   }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function ding_blog_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'ding_nodelist_content_type_edit_form') {
+    $conf = $form_state['conf'];
+    $taxonomy_filters_field = $form['ding_nodelist_wrapper']['nodelist_content']['nodelist_content_wrapper']['ding_nodelist_dynamic']['taxonomy_filters'];
+    $taxonomy_filters = array_filter(array_keys($taxonomy_filters_field), 'is_int');
+
+    foreach ($taxonomy_filters as $key) {
+      $taxonomy_filters_field[$key]['filter_field']['#options']['uid'] = t('Blog author');
+
+      $taxonomy_filters_field[$key]['filter_field']['#default_value'] = !empty($form_state['values']['taxonomy_filters'][$key]) ? $form_state['values']['taxonomy_filters'][$key]['filter_field'] : $conf['taxonomy_filters'][$key]['filter_field'];
+
+      if ($taxonomy_filters_field[$key]['filter_field']['#default_value'] == 'uid') {
+        $blog_author_filter_autocomplete = [
+          '#type' => 'textfield',
+          '#title_display' => 'invisible',
+          '#default_value' => !empty($form_state['values']['taxonomy_filters'][$key]) ? $form_state['values']['taxonomy_filters'][$key]['filter_terms'] : $conf['taxonomy_filters'][$key]['filter_terms'],
+          '#maxlength' => 1024,
+          '#autocomplete_path' => 'autocomplete/blogauthors',
+        ];
+        $taxonomy_filters_field[$key]['filter_terms'] = $blog_author_filter_autocomplete;
+        $taxonomy_filters_field[$key]['filter_bundle']['#value'] = 'blog';
+      }
+    }
+
+    $form['ding_nodelist_wrapper']['nodelist_content']['nodelist_content_wrapper']['ding_nodelist_dynamic']['taxonomy_filters'] = $taxonomy_filters_field;
+
+    // Adding image selection radios.
+    $form['ding_nodelist_wrapper']['nodelist_various_settings']['displayed_image'] = [
+      '#type' => 'container',
+      '#states' => [
+        'invisible' => [
+          ':input[name="content_types[blog]"]' => ['checked' => FALSE],
+        ],
+      ],
+    ];
+
+    $form['ding_nodelist_wrapper']['nodelist_various_settings']['displayed_image']['image_field'] = [
+      '#type' => 'radios',
+      '#title' => 'Blog displayed image',
+      '#default_value' => !empty($form_state['conf']) ? $form_state['conf']['image_field'] : 'list_image',
+      '#options' => [
+        'list_image' => 'List image',
+        'staff_image' => 'Author image',
+      ],
+    ];
+
+    // Handle "displayed images" variable on form submit.
+    $form['#submit'][] = 'ding_blog_nodelist_form_submit';
+  }
+}
+
+/**
+ * Custom form submit handler.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function ding_blog_nodelist_form_submit($form, &$form_state) {
+  $conf = $form_state['conf'];
+  $conf['image_field'] = !empty($form_state['values']['image_field']) ? $form_state['values']['image_field'] : 'list_image';
+  $form_state['conf'] = $conf;
+}
+
+/**
+ * Autocomplete helper.
+ *
+ * @param string $string
+ *   Search string.
+ */
+function _ding_blog_authors_autocomplete($string) {
+  $matches = array();
+  $role = user_role_load_by_name('staff');
+
+  $query = db_select('users', 'u');
+  $query->join('users_roles', 'ur', 'u.uid = ur.uid');
+  $query->fields('u', array('uid', 'name'));
+  $query->condition('ur.rid', $role->rid, '=');
+  $query->condition('u.name', '%' . db_like($string) . '%', 'LIKE');
+  $result = $query->execute()->fetchAllAssoc('uid');
+
+  // Save the query to matches.
+  foreach ($result as $user) {
+    $matches[$user->name] = check_plain($user->name);
+  }
+
+  // Return the result to the form in json.
+  drupal_json_output($matches);
 }
