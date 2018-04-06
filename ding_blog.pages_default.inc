@@ -13,6 +13,108 @@ function ding_blog_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'blog__panel_context_80e64219-0dbd-4979-b31c-eebe28274fca';
+  $handler->task = 'blog';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Blogs page',
+    'no_blocks' => 0,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => '',
+  );
+  $display = new panels_display();
+  $display->layout = 'ding_layout_1';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'primary' => NULL,
+      'secondary' => NULL,
+      'tertiary' => NULL,
+      'attachment_4_1' => NULL,
+      'attachment_4_2' => NULL,
+      'attachment_4_3' => NULL,
+      'attachment_4_4' => NULL,
+      'attachment_3_1' => NULL,
+      'attachment_3_2' => NULL,
+      'attachment_3_3' => NULL,
+      'attachment_2_1' => NULL,
+      'attachment_2_2' => NULL,
+      'attachment_1_1' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'dae43aa2-d807-4afb-9e6c-108f2deeb7b5';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'blog__panel_context_80e64219-0dbd-4979-b31c-eebe28274fca';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-e8a1f584-98cd-44b9-8005-08cc896eb881';
+  $pane->panel = 'primary';
+  $pane->type = 'ding_nodelist';
+  $pane->subtype = 'ding_nodelist';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'list_type' => 'all',
+    'title_length' => 25,
+    'body_length' => 100,
+    'dynamic_switch' => 0,
+    'nodes_switch' => 0,
+    'autoscroll_delay' => NULL,
+    'columns' => 'full',
+    'content_filter_promoted' => 0,
+    'content_filter_date' => FALSE,
+    'content_types' => array(
+      'blog' => 'blog',
+    ),
+    'limit' => '12',
+    'more_links' => array(),
+    'override_title_text' => 'Latest blog entries',
+    'selected_nodes' => array(),
+    'sort_field' => 'created',
+    'sort_order' => 'desc',
+    'taxonomy_filters' => array(),
+    'unique_id' => 'pane-15230038111016',
+    'widget_type' => 'node_blocks',
+    'item_template' => '',
+    'image_field' => 'list_image',
+  );
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '1800',
+      'granularity' => 'context',
+    ),
+  );
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e8a1f584-98cd-44b9-8005-08cc896eb881';
+  $display->content['new-e8a1f584-98cd-44b9-8005-08cc896eb881'] = $pane;
+  $display->panels['primary'][0] = 'new-e8a1f584-98cd-44b9-8005-08cc896eb881';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['blog__panel_context_80e64219-0dbd-4979-b31c-eebe28274fca'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'blog_user__panel_context_ff42408c-a352-4e9f-90f8-7b6f21d6002a';
   $handler->task = 'blog_user';
   $handler->subtask = '';
@@ -21,7 +123,7 @@ function ding_blog_default_page_manager_handlers() {
   $handler->conf = array(
     'title' => 'Staff profile',
     'no_blocks' => 0,
-    'pipeline' => 'standard',
+    'pipeline' => 'ipe',
     'body_classes_to_remove' => '',
     'body_classes_to_add' => '',
     'css_id' => '',
