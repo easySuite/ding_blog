@@ -12,6 +12,11 @@ function ding_blog_install() {
   variable_set('page_manager_blog_disabled', FALSE);
   variable_set('page_manager_blog_user_disabled', FALSE);
 
+  // Delete body field blog instance.
+  if ($instance = field_info_instance('node', 'body', 'blog')) {
+    field_delete_instance($instance);
+  }
+
   _ding_blog_add_category_terms();
   _ding_blog_enable_nodelist_support();
   _ding_blog_create_blog_pages_nodelist_pane();
