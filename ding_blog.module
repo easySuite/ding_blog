@@ -95,6 +95,7 @@ function ding_blog_preprocess_ding2_site_template(&$variables) {
 
       $output = '<div class="grid-medium panel-pane pane-views-panes pane-ding-blog-ding-blog-list-user">';
       $output .= '<div class="panel-pane-inner">';
+      $output .= '<h2 class="pane-title">' . t("@user's blog", array('@user' => $user->name)) . '</h2>';
       $output .= $result;
       $output .= '</div></div>';
 
