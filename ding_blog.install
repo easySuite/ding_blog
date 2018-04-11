@@ -8,10 +8,18 @@
  * Implements hook_install().
  */
 function ding_blog_install() {
-  // Enable user blog page.
+  // Enable blog pages.
+  variable_set('page_manager_blog_disabled', FALSE);
   variable_set('page_manager_blog_user_disabled', FALSE);
 
+  // Delete body field blog instance.
+  if ($instance = field_info_instance('node', 'body', 'blog')) {
+    field_delete_instance($instance);
+  }
+
   _ding_blog_add_category_terms();
+  _ding_blog_enable_nodelist_support();
+  _ding_blog_create_blog_pages_nodelist_pane();
 }
 
 /**
@@ -22,7 +30,8 @@ function ding_blog_uninstall() {
   $category = taxonomy_vocabulary_machine_name_load('blog_category');
   taxonomy_vocabulary_delete($category->vid);
 
-  // Disable user blog page.
+  // Disable blog pages.
+  variable_set('page_manager_blog_disabled', TRUE);
   variable_set('page_manager_blog_user_disabled', TRUE);
 }
 
@@ -49,4 +58,120 @@ function _ding_blog_add_category_terms() {
     $term->vid = $category->vid;
     taxonomy_term_save($term);
   }
+}
+
+/**
+ * Enable support of ding_blog in ding_nodelist.
+ */
+function _ding_blog_enable_nodelist_support() {
+  // Enable ding_blog as a nodelist processed CT.
+  $content_types = variable_get('ding_nodelist_node_types', array());
+  $content_types['blog'] = 'blog';
+  variable_set('ding_nodelist_node_types', $content_types);
+
+  // Map ding_blog nodelist template.
+  $mappings = array(
+    'ding_nodelist.blog.node_blocks' => array(
+      'widget' => 'node_blocks',
+      'content_type' => 'blog',
+    ),
+  );
+
+  foreach ($mappings as $filename => $mapping) {
+    $fields = array(
+      'filename' => $filename,
+      'title' => $filename,
+      'content_type' => $mapping['content_type'],
+      'widget' => $mapping['widget'],
+      'status' => 0,
+    );
+    db_insert('ding_nodelist_templates')->fields($fields)->execute();
+  }
+}
+
+/**
+ * Create nodelist pane on blogs page.
+ */
+function _ding_blog_create_blog_pages_nodelist_pane() {
+  $display = new panels_display();
+  $display->layout = 'ding_layout_1';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'primary' => NULL,
+      'secondary' => NULL,
+      'tertiary' => NULL,
+      'attachment_4_1' => NULL,
+      'attachment_4_2' => NULL,
+      'attachment_4_3' => NULL,
+      'attachment_4_4' => NULL,
+      'attachment_3_1' => NULL,
+      'attachment_3_2' => NULL,
+      'attachment_3_3' => NULL,
+      'attachment_2_1' => NULL,
+      'attachment_2_2' => NULL,
+      'attachment_1_1' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'dae43aa2-d807-4afb-9e6c-108f2deeb7b5';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'blog__panel_context_80e64219-0dbd-4979-b31c-eebe28274fca';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-e8a1f584-98cd-44b9-8005-08cc896eb881';
+  $pane->panel = 'primary';
+  $pane->type = 'ding_nodelist';
+  $pane->subtype = 'ding_nodelist';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'list_type' => 'all',
+    'title_length' => 25,
+    'body_length' => 100,
+    'dynamic_switch' => 0,
+    'nodes_switch' => 0,
+    'autoscroll_delay' => NULL,
+    'columns' => 'full',
+    'content_filter_promoted' => 0,
+    'content_filter_date' => FALSE,
+    'content_types' => array(
+      'blog' => 'blog',
+    ),
+    'limit' => '12',
+    'more_links' => array(),
+    'override_title_text' => 'Latest blog entries',
+    'selected_nodes' => array(),
+    'sort_field' => 'created',
+    'sort_order' => 'desc',
+    'taxonomy_filters' => array(),
+    'unique_id' => 'pane-15230038111016',
+    'widget_type' => 'node_blocks',
+    'item_template' => '',
+    'image_field' => 'list_image',
+  );
+  $pane->cache = array(
+    'method' => 'simple',
+    'settings' => array(
+      'lifetime' => '1800',
+      'granularity' => 'context',
+    ),
+  );
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = array();
+  $pane->uuid = 'e8a1f584-98cd-44b9-8005-08cc896eb881';
+  $display->content['new-e8a1f584-98cd-44b9-8005-08cc896eb881'] = $pane;
+  $display->panels['primary'][0] = 'new-e8a1f584-98cd-44b9-8005-08cc896eb881';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+
+  panels_save_display($display);
 }

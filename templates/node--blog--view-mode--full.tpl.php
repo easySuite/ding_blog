@@ -2,7 +2,7 @@
 
 /**
  * @file
- * DDBasic's theme implementation to display blog nodes.
+ * DDBasic's theme implementation to display news nodes.
  *
  * Available variables:
  * - $title: the (sanitized) title of the node.
@@ -79,27 +79,32 @@
  * - $blog_full_submitted: Submitted date and time
  * - $blog_full_changed: Changed date and time
  * - $blog_submitted: Submitted date
- * - $blog_teaser_image: Div with image as background or empty div if no image
  *
  * @see template_preprocess()
  * @see template_preprocess_node()
  * @see template_process()
  */
+unset($content['comments']);
+unset($content['links']);
 ?>
 <article class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <a href="<?php print $node_url; ?>">
-    <?php print $blog_teaser_image; ?>
-    <div class="blog-text">
-      <h3 class="title"><?php print $title; ?></h3>
-      <div class="category-and-submitted">
-        <?php print render($content['field_ding_blog_category']); ?>
-        <?php if (isset($content['field_editorial_base'])) : ?>
-          <?php print render($content['field_editorial_base']); ?>
-        <?php endif; ?>
-        <div class="info-dash">-</div>
-        <div class="submitted"><?php print $blog_submitted; ?></div>
-      </div>
-      <?php print render($content['body']); ?>
+  <div class="inner">
+    <div class="ding-blog-left">
+      <?php print render($content['group_left']); ?>
+      <?php if (!empty($campaigns)): ?>
+        <?php print drupal_render($campaigns); ?>
+      <?php endif; ?>
     </div>
-  </a>
+    <div class="ding-blog-right">
+      <h1><?php print $title; ?></h1>
+      <?php print render($content['group_right']['field_ding_blog_category']); ?>
+      <div class="section meta">
+        <div class="author"><?php print t("By"); ?> <?php print $name; ?></div>
+        <div class="created"><?php print $blog_submitted ?>
+        </div>
+      </div>
+      <?php print render($content['group_right']); ?>
+    </div>
+    <?php print render($content); ?>
+  </div>
 </article>
