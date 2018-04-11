@@ -13,7 +13,7 @@ function ding_blog_install() {
   variable_set('page_manager_blog_user_disabled', FALSE);
 
   // Delete body field blog instance.
-  if($instance = field_info_instance('node', 'body', 'blog')) {
+  if ($instance = field_info_instance('node', 'body', 'blog')) {
     field_delete_instance($instance);
   }
 
