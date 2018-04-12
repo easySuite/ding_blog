@@ -96,10 +96,9 @@
         <?php if (isset($content['field_editorial_base'])) : ?>
           <?php print render($content['field_editorial_base']); ?>
         <?php endif; ?>
-        <div class="info-dash">-</div>
         <div class="submitted"><?php print $blog_submitted; ?></div>
       </div>
-      <?php print render($content['body']); ?>
+      <?php print render($content['field_blog_body']); ?>
     </div>
   </a>
 </article>
