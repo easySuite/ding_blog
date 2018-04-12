@@ -225,7 +225,7 @@ function ding_blog_field_group_info() {
     'label' => 'Right',
     'weight' => '2',
     'children' => array(
-      0 => 'body',
+      0 => 'field_blog_body',
       1 => 'field_ding_blog_category',
     ),
     'format_type' => 'div',
