@@ -104,6 +104,15 @@ function ding_blog_preprocess_ding2_site_template(&$variables) {
 }
 
 /**
+ * Implements hook_panels_pane_content_alter().
+ */
+function ding_blog_panels_pane_content_alter($content, $pane, $args, $contexts) {
+  if (is_object($content) && $content->type == 'staff_profile' && arg(0) == 'blog') {
+    $content->title = t("@title's blog", array('@title' => $content->title));
+  }
+}
+
+/**
  * Ding blog preprocess function.
  */
 function ding_blog_preprocess__node__blog(&$variables) {
