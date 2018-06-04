@@ -23,6 +23,7 @@ dependencies[] = view_unpublished
 dependencies[] = views
 dependencies[] = views_content
 stylesheets[all][] = css/ding_blog.css
+scripts[] = scripts/ding_blog.js
 features[ctools][] = field_group:field_group:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = views:views_default:3.0
