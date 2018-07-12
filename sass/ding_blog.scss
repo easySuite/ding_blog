@@ -1,0 +1,247 @@
+@import "../../../themes/ddbasic/sass/_base.scss";
+@import "susy";
+
+article.node-blog {
+  padding-top: 20px;
+}
+
+.page-node-add-blog {
+  .content-wrapper {
+   .form-item {
+      max-width: 100%;
+    }
+  }
+
+  .form-item-field-ding-blog-list-image-und-0 label,
+  #edit-submit,
+  #edit-preview {
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  .filter-guidelines,
+  .filter-help {
+    display: none;
+  }
+
+  div.form-media {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -20px;
+  }
+
+  fieldset .fieldset-wrapper {
+    width: 100%;
+  }
+
+  .field-type-taxonomy-term-reference {
+    width: 25%;
+  }
+}
+
+.ding2-site-template {
+  .ding2-site-template {
+    .view.grid-medium.view-display-id-user_blog_list_categories {
+      h3 {
+        float: left;
+        width: 100%;
+      }
+
+      .views-row:nth-child(3n+1) {
+        clear: none;
+        margin-left: 2.4911%;
+        margin-right: 0;
+      }
+    }
+
+    .field-name-field-ding-news-blogs-headline,
+    .field-name-field-ding-event-blogs-headline {
+      clear: left;
+    }
+
+    .field-name-field-ding-news-blogs,
+    .field-name-field-ding-event-blogs {
+      float: left;
+    }
+
+    .node-blog {
+      .inner {
+        max-width: 1124px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+
+        .ding-blog-left {
+          @include span-columns(4 of 12);
+          min-height: 1px;
+        }
+
+        .ding-blog-right {
+          @include span-columns(8 of 12);
+          margin-left: 20px;
+
+          .field-name-field-blog-body p {
+            text-align: justify;
+          }
+        }
+
+        .field-name-field-ding-blog-materials {
+          width: 100%;
+          float: left;
+          padding-top: 20px;
+
+          .field-label {
+            font-family: FaktPro-Light,sans-serif;
+            font-size: 40px;
+            line-height: 44px;
+            color: #262627;
+            margin-bottom: 20px;
+          }
+
+          .field-item {
+            display: block;
+            @include span-columns(3 of 12);
+          }
+        }
+      }
+    }
+
+    .view-display-id-related_author_blogs {
+      .views-row {
+        float: left;
+      }
+    }
+  }
+
+  .footer {
+    float: left;
+    width: 100%;
+  }
+}
+
+.pane-ding-blog-related-author-blogs {
+  clear: both;
+
+  h2.pane-title a {
+    color: $color-text;
+  }
+}
+
+// node_blocks
+//==========================================================================
+.ding_nodelist-node_blocks,
+.panel-pane.pane-ding-blog-ding-blog-list-user,
+.pane-ding-blog-related-author-blogs,
+.pane-ding-blog-related-category-blogs {
+  .ding_nodelist-items,
+  .view-content {
+    display: inline-block;
+    width: 100%;
+
+    .item {
+      @include span-columns(3.95 of 12);
+      margin: 0 10px 40px 10px;
+    }
+
+    .item,
+    .node {
+      position: relative;
+
+      :last-child {
+        margin-right: -10px;
+      }
+
+      @media only screen and (max-width: 1080px) {
+        @include span-columns(5.5 of 12);
+      }
+
+      @include media($tablet) {
+        @include span-columns(5.5 of 12);
+      }
+
+      @include media($mobile) {
+        @include span-columns(3 of 3);
+        margin: 0;
+        float: none;
+        padding-bottom: 15px;
+      }
+
+      &.node-blog .field-name-field-blog-body p {
+        margin-top: 25px;
+      }
+
+      .field-name-field-blog-body p {
+        @include transition(
+           opacity $speed $ease
+        );
+        width: 100%;
+        opacity: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 25px 15px;
+
+        // Mobile
+        @include media($mobile) {
+          display: none;
+        }
+      }
+
+      &:hover {
+        .ding-blog-image,
+        .ding-blog-list-image  {
+          &::after {
+            background-color: $black-overlay;
+          }
+        }
+        .field-name-field-blog-body p {
+          opacity: 1;
+          color: #ffffff;
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding: 25px 15px;
+        }
+      }
+
+      .title {
+        margin: 10px 0 5px;
+        font-size: 120%;
+      }
+
+      .category-and-submitted {
+        float: left;
+        width: 100%;
+        color: rgba(38,38,38,.54);
+      }
+    }
+
+    a {
+      display: block;
+      color: $color-text;
+    }
+
+    .ding-blog-image,
+    .ding-blog-list-image {
+      @include aspect-ratio-background-image(16, 9);
+      overflow: hidden;
+      background-size: cover;
+      &::after {
+        @include transition(background-color $speed $ease);
+        opacity: 1;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      // Mobile
+      @include media($mobile) {
+        @include aspect-ratio-background-image(16, 9);
+        background-size: cover;
+      }
+    }
+  }
+}

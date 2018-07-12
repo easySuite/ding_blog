@@ -1,0 +1,636 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-180deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+  }
+  50% {
+    -moz-transform: rotate(-180deg);
+  }
+  100% {
+    -moz-transform: rotate(-360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+article.node-blog {
+  padding-top: 20px;
+}
+
+.page-node-add-blog .content-wrapper .form-item {
+  max-width: 100%;
+}
+.page-node-add-blog .form-item-field-ding-blog-list-image-und-0 label,
+.page-node-add-blog #edit-submit,
+.page-node-add-blog #edit-preview {
+  display: inline-block;
+  margin-right: 30px;
+}
+.page-node-add-blog .filter-guidelines,
+.page-node-add-blog .filter-help {
+  display: none;
+}
+.page-node-add-blog div.form-media {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -20px;
+}
+.page-node-add-blog fieldset .fieldset-wrapper {
+  width: 100%;
+}
+.page-node-add-blog .field-type-taxonomy-term-reference {
+  width: 25%;
+}
+
+.ding2-site-template .ding2-site-template .view.grid-medium.view-display-id-user_blog_list_categories h3 {
+  float: left;
+  width: 100%;
+}
+.ding2-site-template .ding2-site-template .view.grid-medium.view-display-id-user_blog_list_categories .views-row:nth-child(3n+1) {
+  clear: none;
+  margin-left: 2.4911%;
+  margin-right: 0;
+}
+.ding2-site-template .ding2-site-template .field-name-field-ding-news-blogs-headline,
+.ding2-site-template .ding2-site-template .field-name-field-ding-event-blogs-headline {
+  clear: left;
+}
+.ding2-site-template .ding2-site-template .field-name-field-ding-news-blogs,
+.ding2-site-template .ding2-site-template .field-name-field-ding-event-blogs {
+  float: left;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner {
+  max-width: 1124px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .ding-blog-left {
+  float: left;
+  display: block;
+  margin-: 2.4911%;
+  width: 31.6726%;
+  min-height: 1px;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .ding-blog-left:last-child {
+  margin-: 0;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .ding-blog-right {
+  float: left;
+  display: block;
+  margin-: 2.4911%;
+  width: 65.8363%;
+  margin-left: 20px;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .ding-blog-right:last-child {
+  margin-: 0;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .ding-blog-right .field-name-field-blog-body p {
+  text-align: justify;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .field-name-field-ding-blog-materials {
+  width: 100%;
+  float: left;
+  padding-top: 20px;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .field-name-field-ding-blog-materials .field-label {
+  font-family: FaktPro-Light,sans-serif;
+  font-size: 40px;
+  line-height: 44px;
+  color: #262627;
+  margin-bottom: 20px;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .field-name-field-ding-blog-materials .field-item {
+  display: block;
+  float: left;
+  display: block;
+  margin-: 2.4911%;
+  width: 23.13167%;
+}
+.ding2-site-template .ding2-site-template .node-blog .inner .field-name-field-ding-blog-materials .field-item:last-child {
+  margin-: 0;
+}
+.ding2-site-template .ding2-site-template .view-display-id-related_author_blogs .views-row {
+  float: left;
+}
+.ding2-site-template .footer {
+  float: left;
+  width: 100%;
+}
+
+.pane-ding-blog-related-author-blogs {
+  clear: both;
+}
+.pane-ding-blog-related-author-blogs h2.pane-title a {
+  color: #262627;
+}
+
+.ding_nodelist-node_blocks .ding_nodelist-items,
+.ding_nodelist-node_blocks .view-content,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items,
+.pane-ding-blog-related-author-blogs .view-content,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items,
+.pane-ding-blog-related-category-blogs .view-content {
+  display: inline-block;
+  width: 100%;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item,
+.ding_nodelist-node_blocks .view-content .item,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item,
+.pane-ding-blog-related-author-blogs .view-content .item,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item,
+.pane-ding-blog-related-category-blogs .view-content .item {
+  float: left;
+  display: block;
+  margin-: 2.4911%;
+  width: 31.24555%;
+  margin: 0 10px 40px 10px;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item:last-child,
+.ding_nodelist-node_blocks .view-content .item:last-child,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item:last-child,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item:last-child,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item:last-child,
+.pane-ding-blog-related-author-blogs .view-content .item:last-child,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item:last-child,
+.pane-ding-blog-related-category-blogs .view-content .item:last-child {
+  margin-: 0;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item,
+.ding_nodelist-node_blocks .ding_nodelist-items .node,
+.ding_nodelist-node_blocks .view-content .item,
+.ding_nodelist-node_blocks .view-content .node,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node,
+.pane-ding-blog-related-author-blogs .view-content .item,
+.pane-ding-blog-related-author-blogs .view-content .node,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node,
+.pane-ding-blog-related-category-blogs .view-content .item,
+.pane-ding-blog-related-category-blogs .view-content .node {
+  position: relative;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item :last-child,
+.ding_nodelist-node_blocks .ding_nodelist-items .node :last-child,
+.ding_nodelist-node_blocks .view-content .item :last-child,
+.ding_nodelist-node_blocks .view-content .node :last-child,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item :last-child,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node :last-child,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item :last-child,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node :last-child,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item :last-child,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node :last-child,
+.pane-ding-blog-related-author-blogs .view-content .item :last-child,
+.pane-ding-blog-related-author-blogs .view-content .node :last-child,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item :last-child,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node :last-child,
+.pane-ding-blog-related-category-blogs .view-content .item :last-child,
+.pane-ding-blog-related-category-blogs .view-content .node :last-child {
+  margin-right: -10px;
+}
+@media only screen and (max-width: 1080px) {
+  .ding_nodelist-node_blocks .ding_nodelist-items .item,
+  .ding_nodelist-node_blocks .ding_nodelist-items .node,
+  .ding_nodelist-node_blocks .view-content .item,
+  .ding_nodelist-node_blocks .view-content .node,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .item,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .node,
+  .pane-ding-blog-related-author-blogs .view-content .item,
+  .pane-ding-blog-related-author-blogs .view-content .node,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .item,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .node,
+  .pane-ding-blog-related-category-blogs .view-content .item,
+  .pane-ding-blog-related-category-blogs .view-content .node {
+    float: left;
+    display: block;
+    margin-: 2.4911%;
+    width: 44.48399%;
+  }
+  .ding_nodelist-node_blocks .ding_nodelist-items .item:last-child,
+  .ding_nodelist-node_blocks .ding_nodelist-items .node:last-child,
+  .ding_nodelist-node_blocks .view-content .item:last-child,
+  .ding_nodelist-node_blocks .view-content .node:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node:last-child,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .item:last-child,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .node:last-child,
+  .pane-ding-blog-related-author-blogs .view-content .item:last-child,
+  .pane-ding-blog-related-author-blogs .view-content .node:last-child,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .item:last-child,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .node:last-child,
+  .pane-ding-blog-related-category-blogs .view-content .item:last-child,
+  .pane-ding-blog-related-category-blogs .view-content .node:last-child {
+    margin-: 0;
+  }
+}
+@media screen and (max-width: 950px) {
+  .ding_nodelist-node_blocks .ding_nodelist-items .item,
+  .ding_nodelist-node_blocks .ding_nodelist-items .node,
+  .ding_nodelist-node_blocks .view-content .item,
+  .ding_nodelist-node_blocks .view-content .node,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .item,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .node,
+  .pane-ding-blog-related-author-blogs .view-content .item,
+  .pane-ding-blog-related-author-blogs .view-content .node,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .item,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .node,
+  .pane-ding-blog-related-category-blogs .view-content .item,
+  .pane-ding-blog-related-category-blogs .view-content .node {
+    float: left;
+    display: block;
+    margin-: 2.4911%;
+    width: 44.48399%;
+  }
+  .ding_nodelist-node_blocks .ding_nodelist-items .item:last-child,
+  .ding_nodelist-node_blocks .ding_nodelist-items .node:last-child,
+  .ding_nodelist-node_blocks .view-content .item:last-child,
+  .ding_nodelist-node_blocks .view-content .node:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node:last-child,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .item:last-child,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .node:last-child,
+  .pane-ding-blog-related-author-blogs .view-content .item:last-child,
+  .pane-ding-blog-related-author-blogs .view-content .node:last-child,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .item:last-child,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .node:last-child,
+  .pane-ding-blog-related-category-blogs .view-content .item:last-child,
+  .pane-ding-blog-related-category-blogs .view-content .node:last-child {
+    margin-: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .ding_nodelist-node_blocks .ding_nodelist-items .item,
+  .ding_nodelist-node_blocks .ding_nodelist-items .node,
+  .ding_nodelist-node_blocks .view-content .item,
+  .ding_nodelist-node_blocks .view-content .node,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .item,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .node,
+  .pane-ding-blog-related-author-blogs .view-content .item,
+  .pane-ding-blog-related-author-blogs .view-content .node,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .item,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .node,
+  .pane-ding-blog-related-category-blogs .view-content .item,
+  .pane-ding-blog-related-category-blogs .view-content .node {
+    float: left;
+    display: block;
+    margin-: 10.76923%;
+    width: 100%;
+    margin: 0;
+    float: none;
+    padding-bottom: 15px;
+  }
+  .ding_nodelist-node_blocks .ding_nodelist-items .item:last-child,
+  .ding_nodelist-node_blocks .ding_nodelist-items .node:last-child,
+  .ding_nodelist-node_blocks .view-content .item:last-child,
+  .ding_nodelist-node_blocks .view-content .node:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item:last-child,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node:last-child,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .item:last-child,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .node:last-child,
+  .pane-ding-blog-related-author-blogs .view-content .item:last-child,
+  .pane-ding-blog-related-author-blogs .view-content .node:last-child,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .item:last-child,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .node:last-child,
+  .pane-ding-blog-related-category-blogs .view-content .item:last-child,
+  .pane-ding-blog-related-category-blogs .view-content .node:last-child {
+    margin-: 0;
+  }
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item.node-blog .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .ding_nodelist-items .node.node-blog .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .view-content .item.node-blog .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .view-content .node.node-blog .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item.node-blog .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node.node-blog .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item.node-blog .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .view-content .item.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .view-content .node.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .view-content .item.node-blog .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .view-content .node.node-blog .field-name-field-blog-body p {
+  margin-top: 25px;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .ding_nodelist-items .node .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .view-content .item .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .view-content .node .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .view-content .item .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .view-content .node .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .view-content .item .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .view-content .node .field-name-field-blog-body p {
+  -webkit-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  width: 100%;
+  opacity: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25px 15px;
+}
+@media screen and (max-width: 600px) {
+  .ding_nodelist-node_blocks .ding_nodelist-items .item .field-name-field-blog-body p,
+  .ding_nodelist-node_blocks .ding_nodelist-items .node .field-name-field-blog-body p,
+  .ding_nodelist-node_blocks .view-content .item .field-name-field-blog-body p,
+  .ding_nodelist-node_blocks .view-content .node .field-name-field-blog-body p,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item .field-name-field-blog-body p,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node .field-name-field-blog-body p,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item .field-name-field-blog-body p,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node .field-name-field-blog-body p,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .item .field-name-field-blog-body p,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .node .field-name-field-blog-body p,
+  .pane-ding-blog-related-author-blogs .view-content .item .field-name-field-blog-body p,
+  .pane-ding-blog-related-author-blogs .view-content .node .field-name-field-blog-body p,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .item .field-name-field-blog-body p,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .node .field-name-field-blog-body p,
+  .pane-ding-blog-related-category-blogs .view-content .item .field-name-field-blog-body p,
+  .pane-ding-blog-related-category-blogs .view-content .node .field-name-field-blog-body p {
+    display: none;
+  }
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item:hover .ding-blog-image::after,
+.ding_nodelist-node_blocks .ding_nodelist-items .item:hover .ding-blog-list-image::after,
+.ding_nodelist-node_blocks .ding_nodelist-items .node:hover .ding-blog-image::after,
+.ding_nodelist-node_blocks .ding_nodelist-items .node:hover .ding-blog-list-image::after,
+.ding_nodelist-node_blocks .view-content .item:hover .ding-blog-image::after,
+.ding_nodelist-node_blocks .view-content .item:hover .ding-blog-list-image::after,
+.ding_nodelist-node_blocks .view-content .node:hover .ding-blog-image::after,
+.ding_nodelist-node_blocks .view-content .node:hover .ding-blog-list-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item:hover .ding-blog-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item:hover .ding-blog-list-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node:hover .ding-blog-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node:hover .ding-blog-list-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item:hover .ding-blog-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item:hover .ding-blog-list-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node:hover .ding-blog-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item:hover .ding-blog-image::after,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node:hover .ding-blog-image::after,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-author-blogs .view-content .item:hover .ding-blog-image::after,
+.pane-ding-blog-related-author-blogs .view-content .item:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-author-blogs .view-content .node:hover .ding-blog-image::after,
+.pane-ding-blog-related-author-blogs .view-content .node:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item:hover .ding-blog-image::after,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node:hover .ding-blog-image::after,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-category-blogs .view-content .item:hover .ding-blog-image::after,
+.pane-ding-blog-related-category-blogs .view-content .item:hover .ding-blog-list-image::after,
+.pane-ding-blog-related-category-blogs .view-content .node:hover .ding-blog-image::after,
+.pane-ding-blog-related-category-blogs .view-content .node:hover .ding-blog-list-image::after {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item:hover .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .ding_nodelist-items .node:hover .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .view-content .item:hover .field-name-field-blog-body p,
+.ding_nodelist-node_blocks .view-content .node:hover .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item:hover .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node:hover .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item:hover .field-name-field-blog-body p,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .view-content .item:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-author-blogs .view-content .node:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .view-content .item:hover .field-name-field-blog-body p,
+.pane-ding-blog-related-category-blogs .view-content .node:hover .field-name-field-blog-body p {
+  opacity: 1;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 25px 15px;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item .title,
+.ding_nodelist-node_blocks .ding_nodelist-items .node .title,
+.ding_nodelist-node_blocks .view-content .item .title,
+.ding_nodelist-node_blocks .view-content .node .title,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item .title,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node .title,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item .title,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node .title,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item .title,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node .title,
+.pane-ding-blog-related-author-blogs .view-content .item .title,
+.pane-ding-blog-related-author-blogs .view-content .node .title,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item .title,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node .title,
+.pane-ding-blog-related-category-blogs .view-content .item .title,
+.pane-ding-blog-related-category-blogs .view-content .node .title {
+  margin: 10px 0 5px;
+  font-size: 120%;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item .category-and-submitted,
+.ding_nodelist-node_blocks .ding_nodelist-items .node .category-and-submitted,
+.ding_nodelist-node_blocks .view-content .item .category-and-submitted,
+.ding_nodelist-node_blocks .view-content .node .category-and-submitted,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item .category-and-submitted,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node .category-and-submitted,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item .category-and-submitted,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node .category-and-submitted,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item .category-and-submitted,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node .category-and-submitted,
+.pane-ding-blog-related-author-blogs .view-content .item .category-and-submitted,
+.pane-ding-blog-related-author-blogs .view-content .node .category-and-submitted,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item .category-and-submitted,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node .category-and-submitted,
+.pane-ding-blog-related-category-blogs .view-content .item .category-and-submitted,
+.pane-ding-blog-related-category-blogs .view-content .node .category-and-submitted {
+  float: left;
+  width: 100%;
+  color: rgba(38, 38, 38, 0.54);
+}
+.ding_nodelist-node_blocks .ding_nodelist-items a,
+.ding_nodelist-node_blocks .view-content a,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items a,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content a,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items a,
+.pane-ding-blog-related-author-blogs .view-content a,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items a,
+.pane-ding-blog-related-category-blogs .view-content a {
+  display: block;
+  color: #262627;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .ding-blog-image,
+.ding_nodelist-node_blocks .ding_nodelist-items .ding-blog-list-image,
+.ding_nodelist-node_blocks .view-content .ding-blog-image,
+.ding_nodelist-node_blocks .view-content .ding-blog-list-image,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .ding-blog-image,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .ding-blog-list-image,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .ding-blog-image,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .ding-blog-list-image,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .ding-blog-image,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .ding-blog-list-image,
+.pane-ding-blog-related-author-blogs .view-content .ding-blog-image,
+.pane-ding-blog-related-author-blogs .view-content .ding-blog-list-image,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .ding-blog-image,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .ding-blog-list-image,
+.pane-ding-blog-related-category-blogs .view-content .ding-blog-image,
+.pane-ding-blog-related-category-blogs .view-content .ding-blog-list-image {
+  display: block;
+  position: relative;
+  background-color: #e5e5e5;
+  padding-top: 56.25%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  overflow: hidden;
+  background-size: cover;
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .ding-blog-image::after,
+.ding_nodelist-node_blocks .ding_nodelist-items .ding-blog-list-image::after,
+.ding_nodelist-node_blocks .view-content .ding-blog-image::after,
+.ding_nodelist-node_blocks .view-content .ding-blog-list-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .ding-blog-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .ding-blog-list-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .ding-blog-image::after,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .ding-blog-list-image::after,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .ding-blog-image::after,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .ding-blog-list-image::after,
+.pane-ding-blog-related-author-blogs .view-content .ding-blog-image::after,
+.pane-ding-blog-related-author-blogs .view-content .ding-blog-list-image::after,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .ding-blog-image::after,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .ding-blog-list-image::after,
+.pane-ding-blog-related-category-blogs .view-content .ding-blog-image::after,
+.pane-ding-blog-related-category-blogs .view-content .ding-blog-list-image::after {
+  -webkit-transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -moz-transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: background-color 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 600px) {
+  .ding_nodelist-node_blocks .ding_nodelist-items .ding-blog-image,
+  .ding_nodelist-node_blocks .ding_nodelist-items .ding-blog-list-image,
+  .ding_nodelist-node_blocks .view-content .ding-blog-image,
+  .ding_nodelist-node_blocks .view-content .ding-blog-list-image,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .ding-blog-image,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .ding-blog-list-image,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .ding-blog-image,
+  .panel-pane.pane-ding-blog-ding-blog-list-user .view-content .ding-blog-list-image,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .ding-blog-image,
+  .pane-ding-blog-related-author-blogs .ding_nodelist-items .ding-blog-list-image,
+  .pane-ding-blog-related-author-blogs .view-content .ding-blog-image,
+  .pane-ding-blog-related-author-blogs .view-content .ding-blog-list-image,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .ding-blog-image,
+  .pane-ding-blog-related-category-blogs .ding_nodelist-items .ding-blog-list-image,
+  .pane-ding-blog-related-category-blogs .view-content .ding-blog-image,
+  .pane-ding-blog-related-category-blogs .view-content .ding-blog-list-image {
+    display: block;
+    position: relative;
+    background-color: #e5e5e5;
+    padding-top: 56.25%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
