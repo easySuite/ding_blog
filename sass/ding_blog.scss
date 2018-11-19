@@ -1,5 +1,6 @@
 @import "../../../themes/ddbasic/sass/_base.scss";
 @import "susy";
+@import "../../../themes/ddbasic/sass/contrib/neat/neat";
 
 article.node-blog {
   padding-top: 20px;
@@ -7,7 +8,7 @@ article.node-blog {
 
 .page-node-add-blog {
   .content-wrapper {
-   .form-item {
+    .form-item {
       max-width: 100%;
     }
   }
@@ -39,84 +40,104 @@ article.node-blog {
   }
 }
 
-.ding2-site-template {
-  .ding2-site-template {
-    .view.grid-medium.view-display-id-user_blog_list_categories {
-      h3 {
-        float: left;
-        width: 100%;
-      }
-
-      .views-row:nth-child(3n+1) {
-        clear: none;
-        margin-left: 2.4911%;
-        margin-right: 0;
-      }
-    }
-
-    .field-name-field-ding-news-blogs-headline,
-    .field-name-field-ding-event-blogs-headline {
-      clear: left;
-    }
-
-    .field-name-field-ding-news-blogs,
-    .field-name-field-ding-event-blogs {
-      float: left;
-    }
-
-    .node-blog {
-      .inner {
-        max-width: 1124px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-
-        .ding-blog-left {
-          @include span-columns(4 of 12);
-          min-height: 1px;
-        }
-
-        .ding-blog-right {
-          @include span-columns(8 of 12);
-          margin-left: 20px;
-
-          .field-name-field-blog-body p {
-            text-align: justify;
-          }
-        }
-
-        .field-name-field-ding-blog-materials {
-          width: 100%;
-          float: left;
-          padding-top: 20px;
-
-          .field-label {
-            font-family: FaktPro-Light,sans-serif;
-            font-size: 40px;
-            line-height: 44px;
-            color: #262627;
-            margin-bottom: 20px;
-          }
-
-          .field-item {
-            display: block;
-            @include span-columns(3 of 12);
-          }
-        }
-      }
-    }
-
-    .view-display-id-related_author_blogs {
-      .views-row {
-        float: left;
-      }
-    }
-  }
-
-  .footer {
+.view.grid-medium.view-display-id-user_blog_list_categories {
+  h3 {
     float: left;
     width: 100%;
   }
+
+  .views-row:nth-child(3n+1) {
+    clear: none;
+    margin-left: 2.4911%;
+    margin-right: 0;
+  }
+}
+
+.field-name-field-ding-news-blogs-headline,
+.field-name-field-ding-event-blogs-headline {
+  clear: left;
+}
+
+.field-name-field-ding-news-blogs,
+.field-name-field-ding-event-blogs {
+  float: left;
+}
+
+.node-blog {
+  @include linear-gradient(to top, $white 30px, $grey-light 100%);
+  padding: 40px 0 30px;
+  h1 {
+    @include font('display');
+    margin-bottom: 0;
+    color: $charcoal;
+  }
+  .meta {
+    padding: 10px 0;
+    border-top: 1px solid $grey-medium;
+    border-bottom: 1px solid $grey-medium;
+    margin: 30px 0;
+
+    // Mobile
+    @include media($mobile) {
+      margin: 15px 0 30px;
+    }
+    .author {
+      margin-bottom: 5px;
+    }
+  }
+  .ding-blog-inner {
+    max-width: 1124px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+
+    .ding-blog-left {
+      @include span-columns(5);
+      min-height: 1px;
+
+      // Tablet
+      @include media($tablet) {
+        @include span-columns(6);
+      }
+
+      // Mobile
+      @include media($mobile) {
+        @include span-columns(12);
+        margin-bottom: 20px;
+      }
+    }
+
+    .ding-blog-right {
+      @include span-columns(5);
+
+      // Tablet
+      @include media($tablet) {
+        @include span-columns(6);
+        margin-right: 0;
+      }
+
+      // Mobile
+      @include media($mobile) {
+        @include span-columns(12);
+        margin-right: 0;
+      }
+
+      .field-name-field-blog-body p {
+        text-align: justify;
+      }
+    }
+  }
+}
+
+.view-display-id-related_author_blogs {
+  .views-row {
+    float: left;
+  }
+}
+
+.footer {
+  float: left;
+  width: 100%;
 }
 
 .pane-ding-blog-related-author-blogs {
@@ -124,6 +145,60 @@ article.node-blog {
 
   h2.pane-title a {
     color: $color-text;
+  }
+}
+
+.field-name-field-ding-blog-materials {
+  width: 100%;
+  float: left;
+
+  // When placed directly after .inner in node ding news
+  .node-blog .ding-blog-inner > & {
+    padding-top: 20px;
+    > .field-label {
+      @include font('display-large');
+      color: $color-text;
+      margin-bottom: 20px;
+      // Mobile
+      @include media($mobile) {
+        margin-bottom: 10px;
+      }
+    }
+    > .field-items {
+      > .field-item {
+        @include span-columns(3);
+        @include omega(4n);
+        margin-bottom: getGutter();
+        // Tablet
+        @include media($tablet) {
+          @include omega-reset(4n, 12);
+          @include span-columns(4);
+          @include omega(3n);
+        }
+        // Mobile
+        @include media($mobile) {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  // When placed in group-right in node ding news
+  .group-right & {
+    @include span-columns(7 of 5);
+
+    // Tablet
+    @include media($tablet) {
+      width: 100%;
+    }
+    > .field-items {
+      > .field-item {
+        width: 100%;
+        float: left;
+        margin-bottom: 20px;
+      }
+    }
   }
 }
 
@@ -172,7 +247,7 @@ article.node-blog {
 
       .field-name-field-blog-body p {
         @include transition(
-           opacity $speed $ease
+            opacity $speed $ease
         );
         width: 100%;
         opacity: 0;
@@ -190,14 +265,14 @@ article.node-blog {
 
       &:hover {
         .ding-blog-image,
-        .ding-blog-list-image  {
+        .ding-blog-list-image {
           &::after {
             background-color: $black-overlay;
           }
         }
         .field-name-field-blog-body p {
           opacity: 1;
-          color: #ffffff;
+          color: #fff;
           position: absolute;
           top: 0;
           left: 0;
@@ -213,7 +288,7 @@ article.node-blog {
       .category-and-submitted {
         float: left;
         width: 100%;
-        color: rgba(38,38,38,.54);
+        color: rgba(38, 38, 38, .54);
       }
     }
 
