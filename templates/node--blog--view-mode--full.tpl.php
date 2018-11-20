@@ -87,7 +87,7 @@
 unset($content['comments']);
 unset($content['links']);
 ?>
-<article class="<?php print $classes; ?>"<?php print $attributes; ?>>
+<article class="<?php print $classes; ?> node-full"<?php print $attributes; ?>>
   <div class="ding-blog-inner">
     <div class="ding-blog-left">
       <?php print render($content['group_left']); ?>

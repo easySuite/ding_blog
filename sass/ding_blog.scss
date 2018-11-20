@@ -3,7 +3,7 @@
 @import "../../../themes/ddbasic/sass/contrib/neat/neat";
 
 article.node-blog {
-  padding-top: 20px;
+  margin-top: 20px;
 }
 
 .page-node-add-blog {
@@ -65,7 +65,7 @@ article.node-blog {
 
 .node-blog {
   @include linear-gradient(to top, $white 30px, $grey-light 100%);
-  padding: 40px 0 30px;
+  margin: 40px 0 30px;
   h1 {
     @include font('display');
     margin-bottom: 0;
