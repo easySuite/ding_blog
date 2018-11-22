@@ -201,9 +201,9 @@ function ding_blog_update_7001() {
 
   if (empty($field)) {
     db_update('ding_nodelist_templates')
-      ->fields([
+      ->fields(array(
         'content_type' => 'blog',
-      ])
+      ))
       ->condition('filename', 'ding_nodelist.blog.node_blocks')
       ->execute();
   }
