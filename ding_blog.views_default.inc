@@ -85,6 +85,8 @@ function ding_blog_views_default_views() {
 
   /* Display: User blog list */
   $handler = $view->new_display('panel_pane', 'User blog list', 'ding_blog_list_user');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Blogs from this author';
   $handler->display->display_options['pane_category']['name'] = 'Blog panes';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -355,6 +357,7 @@ function ding_blog_views_default_views() {
     t('author'),
     t('All'),
     t('User blog list'),
+    t('Blogs from this author'),
     t('Blog panes'),
     t('User blog list by category'),
     t('Get all blogs grouped by category of the specified user id.'),

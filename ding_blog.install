@@ -188,3 +188,23 @@ function _ding_blog_create_blog_pages_nodelist_pane() {
 
   panels_save_display($display);
 }
+
+/**
+ * Update nodelist template for Blog CT.
+ */
+function ding_blog_update_7001() {
+  $field = db_select('ding_nodelist_templates', 'nt')
+    ->fields('nt', array('content_type'))
+    ->condition('filename', 'ding_nodelist.blog.node_blocks')
+    ->execute()
+    ->fetchField();
+
+  if (empty($field)) {
+    db_update('ding_nodelist_templates')
+      ->fields(array(
+        'content_type' => 'blog',
+      ))
+      ->condition('filename', 'ding_nodelist.blog.node_blocks')
+      ->execute();
+  }
+}
