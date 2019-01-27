@@ -208,6 +208,8 @@ article.node-blog {
 .panel-pane.pane-ding-blog-ding-blog-list-user,
 .pane-ding-blog-related-author-blogs,
 .pane-ding-blog-related-category-blogs {
+  width: 100%;
+  float: left;
   .ding_nodelist-items,
   .view-content {
     display: inline-block;
