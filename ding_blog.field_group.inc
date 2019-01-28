@@ -125,6 +125,35 @@ function ding_blog_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_left_col_search|node|blog|search_result';
+  $field_group->group_name = 'group_left_col_search';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blog';
+  $field_group->mode = 'search_result';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Left column',
+    'weight' => '1',
+    'children' => array(),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => 'group-left-col-search field-group-div',
+        'id' => '',
+      ),
+    ),
+  );
+  $field_groups['group_left_col_search|node|blog|search_result'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_left|node|blog|default';
   $field_group->group_name = 'group_left';
   $field_group->entity_type = 'node';
@@ -215,6 +244,39 @@ function ding_blog_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_right_col_search|node|blog|search_result';
+  $field_group->group_name = 'group_right_col_search';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blog';
+  $field_group->mode = 'search_result';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Right column',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_blog_body',
+      1 => 'field_ding_blog_category',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Right column',
+      'instance_settings' => array(
+        'id' => 'node_blog_search_result_group_right_col_search',
+        'classes' => 'search-right group-right-col-search field-group-div',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_right_col_search|node|blog|search_result'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_right|node|blog|default';
   $field_group->group_name = 'group_right';
   $field_group->entity_type = 'node';
@@ -252,8 +314,10 @@ function ding_blog_field_group_info() {
   t('Data well');
   t('Images');
   t('Left');
+  t('Left column');
   t('Related Content');
   t('Right');
+  t('Right column');
 
   return $field_groups;
 }
