@@ -121,6 +121,27 @@ function ding_blog_preprocess__node__blog(&$variables) {
   $variables['blog_submitted'] = format_date($variables['created'], 'ding_date_only_version2');
 
   switch ($variables['view_mode']) {
+    case 'full':
+      $query = db_select('field_data_field_ding_staff_forename', 'staff');
+      $query->innerJoin('profile', 'p', 'p.pid=staff.entity_id');
+      $query->fields('staff', array('field_ding_staff_forename_value'))
+        ->condition('p.uid', $variables['uid']);
+      $forename = $query->execute()->fetchField();
+
+      $query = db_select('field_data_field_ding_staff_surname', 'staff');
+      $query->innerJoin('profile', 'p', 'p.pid=staff.entity_id');
+      $query->fields('staff', array('field_ding_staff_surname_value'))
+        ->condition('p.uid', $variables['uid']);
+      $surname = $query->execute()->fetchField();
+
+      $author = "$forename $surname";
+      if (empty($forename) && empty($surname)) {
+        $user = user_load($variables['uid']);
+        $author = $user->name;
+      }
+      $variables['author'] = l($author, '/blog/' . $variables['uid']);
+
+      break;
     case 'teaser':
       if (!empty($variables['field_ding_blog_list_image'][0]['uri'])) {
         // Get image url to use as background image.
