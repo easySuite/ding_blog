@@ -9,10 +9,10 @@
     -webkit-transform: rotate(0deg);
   }
   50% {
-    -webkit-transform: rotate(180deg);
+    -webkit-transform: rotate(-180deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(-360deg);
   }
 }
 @-moz-keyframes spin {
@@ -20,10 +20,10 @@
     -moz-transform: rotate(0deg);
   }
   50% {
-    -moz-transform: rotate(180deg);
+    -moz-transform: rotate(-180deg);
   }
   100% {
-    -moz-transform: rotate(360deg);
+    -moz-transform: rotate(-360deg);
   }
 }
 @keyframes spin {
@@ -35,18 +35,18 @@
     transform: rotate(0deg);
   }
   50% {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+    transform: rotate(-180deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
   }
 }
 @-webkit-keyframes fadein {
@@ -343,6 +343,13 @@ article.node-blog {
   margin-bottom: 20px;
 }
 
+.ding_nodelist-node_blocks,
+.panel-pane.pane-ding-blog-ding-blog-list-user,
+.pane-ding-blog-related-author-blogs,
+.pane-ding-blog-related-category-blogs {
+  width: 100%;
+  float: left;
+}
 .ding_nodelist-node_blocks .ding_nodelist-items,
 .ding_nodelist-node_blocks .view-content,
 .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items,
