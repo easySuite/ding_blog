@@ -127,6 +127,20 @@ article.node-blog {
       }
     }
   }
+  &.node-teaser {
+    .summary {
+      position: absolute;
+      top: 0;
+      color: #fff;
+      padding: 15px;
+      visibility: hidden;
+    }
+    &.is-hovered {
+      .summary {
+        visibility: visible;
+      }
+    }
+  }
 }
 
 .view-display-id-related_author_blogs {
