@@ -233,6 +233,16 @@ article.node-blog {
     margin-right: 0;
   }
 }
+.node-blog.node-teaser .summary {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  padding: 15px;
+  visibility: hidden;
+}
+.node-blog.node-teaser.is-hovered .summary {
+  visibility: visible;
+}
 
 .view-display-id-related_author_blogs .views-row {
   float: left;

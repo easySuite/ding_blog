@@ -98,7 +98,9 @@
         <?php endif; ?>
         <div class="submitted"><?php print $blog_submitted; ?></div>
       </div>
-      <?php print render($content['field_blog_body']); ?>
+      <div class="summary">
+        <?php print render($summary);  ?>
+      </div>
     </div>
   </a>
 </article>
