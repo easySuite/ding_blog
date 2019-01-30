@@ -105,6 +105,8 @@ unset($content['links']);
       </div>
       <?php print render($content['group_right']); ?>
     </div>
-    <?php print render($content); ?>
+    <?php if ($materials): ?>
+      <?php print render(field_view_field('node', $node, 'field_ding_blog_materials')); ?>
+    <?php endif; ?>
   </div>
 </article>
