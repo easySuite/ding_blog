@@ -121,10 +121,6 @@ article.node-blog {
         @include span-columns(12);
         margin-right: 0;
       }
-
-      .field-name-field-blog-body p {
-        text-align: justify;
-      }
     }
   }
   &.node-teaser {

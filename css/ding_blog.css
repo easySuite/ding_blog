@@ -233,9 +233,6 @@ article.node-blog {
     margin-right: 0;
   }
 }
-.node-blog .ding-blog-inner .ding-blog-right .field-name-field-blog-body p {
-  text-align: justify;
-}
 .node-blog.node-teaser .summary {
   position: absolute;
   top: 0;

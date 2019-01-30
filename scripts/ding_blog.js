@@ -27,7 +27,6 @@
         // out.
         hovered = $(this);
         setTimeout(function(){
-          // $('.node-blog.node-teaser').removeClass('is-hovered');
           hovered.addClass('is-hovered');
         }, 300);
       });
