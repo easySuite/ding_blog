@@ -141,6 +141,7 @@ function ding_blog_preprocess__node__blog(&$variables) {
       }
       $variables['author'] = l($author, '/blog/' . $variables['uid']);
 
+      $variables['materials'] = field_get_items('node', $variables['node'], 'field_ding_blog_materials');
       break;
     case 'teaser':
       if (!empty($variables['field_ding_blog_list_image'][0]['uri'])) {
