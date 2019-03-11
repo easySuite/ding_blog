@@ -233,8 +233,15 @@ article.node-blog {
     margin-right: 0;
   }
 }
-.node-blog .ding-blog-inner .ding-blog-right .field-name-field-blog-body p {
-  text-align: justify;
+.node-blog.node-teaser .summary {
+  position: absolute;
+  top: 0;
+  color: #fff;
+  padding: 15px;
+  visibility: hidden;
+}
+.node-blog.node-teaser.is-hovered .summary {
+  visibility: visible;
 }
 
 .view-display-id-related_author_blogs .views-row {
@@ -279,6 +286,7 @@ article.node-blog {
   }
 }
 .node-blog .ding-blog-inner > .field-name-field-ding-blog-materials > .field-items > .field-item {
+  width: 100%;
   float: left;
   display: block;
   margin-right: 2.4911%;
@@ -323,6 +331,12 @@ article.node-blog {
     margin-right: 0;
   }
 }
+.node-blog .ding-blog-inner > .field-name-field-ding-blog-materials > .field-items > .field-item .ting-object {
+  width: calc(25% - 10px);
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 .group-right .field-name-field-ding-blog-materials {
   float: left;
   display: block;
@@ -343,6 +357,13 @@ article.node-blog {
   margin-bottom: 20px;
 }
 
+.ding_nodelist-node_blocks,
+.panel-pane.pane-ding-blog-ding-blog-list-user,
+.pane-ding-blog-related-author-blogs,
+.pane-ding-blog-related-category-blogs {
+  width: 100%;
+  float: left;
+}
 .ding_nodelist-node_blocks .ding_nodelist-items,
 .ding_nodelist-node_blocks .view-content,
 .panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items,

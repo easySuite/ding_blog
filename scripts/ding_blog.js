@@ -27,12 +27,12 @@
         // out.
         hovered = $(this);
         setTimeout(function(){
-          $('.node-blog.node-teaser').removeClass('is-hovered');
           hovered.addClass('is-hovered');
         }, 300);
       });
       $('.node-blog.node-teaser').mouseleave(function() {
         $(this).find('.title-and-lead').css('min-height', '');
+        $('.node-blog.node-teaser').removeClass('is-hovered');
       });
     }
   };

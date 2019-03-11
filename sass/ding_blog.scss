@@ -121,9 +121,19 @@ article.node-blog {
         @include span-columns(12);
         margin-right: 0;
       }
-
-      .field-name-field-blog-body p {
-        text-align: justify;
+    }
+  }
+  &.node-teaser {
+    .summary {
+      position: absolute;
+      top: 0;
+      color: #fff;
+      padding: 15px;
+      visibility: hidden;
+    }
+    &.is-hovered {
+      .summary {
+        visibility: visible;
       }
     }
   }
@@ -166,6 +176,7 @@ article.node-blog {
     }
     > .field-items {
       > .field-item {
+        width: 100%;
         @include span-columns(3);
         @include omega(4n);
         margin-bottom: getGutter();
@@ -179,6 +190,13 @@ article.node-blog {
         @include media($mobile) {
           width: 100%;
           margin-right: 0;
+        }
+
+        .ting-object {
+          width: calc(25% - 10px);
+          float: left;
+          margin-right: 10px;
+          margin-bottom: 10px;
         }
       }
     }
@@ -208,6 +226,8 @@ article.node-blog {
 .panel-pane.pane-ding-blog-ding-blog-list-user,
 .pane-ding-blog-related-author-blogs,
 .pane-ding-blog-related-category-blogs {
+  width: 100%;
+  float: left;
   .ding_nodelist-items,
   .view-content {
     display: inline-block;

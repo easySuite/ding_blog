@@ -99,12 +99,14 @@ unset($content['links']);
       <h1><?php print $title; ?></h1>
       <?php print render($content['group_right']['field_ding_blog_category']); ?>
       <div class="section meta">
-        <div class="author"><?php print t("By"); ?> <?php print $name; ?></div>
+        <div class="author"><?php print t("By"); ?> <?php print $author; ?></div>
         <div class="created"><?php print $blog_submitted ?>
         </div>
       </div>
       <?php print render($content['group_right']); ?>
     </div>
-    <?php print render($content); ?>
+    <?php if ($materials): ?>
+      <?php print render(field_view_field('node', $node, 'field_ding_blog_materials')); ?>
+    <?php endif; ?>
   </div>
 </article>
