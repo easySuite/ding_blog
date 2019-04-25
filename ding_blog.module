@@ -174,7 +174,7 @@ function ding_blog_preprocess__node__blog(&$variables) {
         $variables['blog_teaser_image'] = '<div class="ding-blog-list-image background-image-styling-16-9"></div>';
       }
 
-      $variables['summary'] = strip_tags(substr(strip_tags($variables['field_blog_body'][0]['safe_value']), 0, 200));
+      $variables['summary'] = truncate_utf8(strip_tags($variables['field_blog_body'][0]['safe_value']), 150, TRUE, TRUE);
 
       break;
   }
