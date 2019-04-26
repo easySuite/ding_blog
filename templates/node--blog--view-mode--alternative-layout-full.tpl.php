@@ -86,7 +86,6 @@
  */
 unset($content['comments']);
 unset($content['links']);
-$materials_view = field_view_field('node', $node, 'field_ding_blog_materials');
 ?>
 <article class="<?php print $classes; ?> node-full"<?php print $attributes; ?>>
   <div class="ding-blog-inner">
@@ -101,13 +100,9 @@ $materials_view = field_view_field('node', $node, 'field_ding_blog_materials');
       <?php print render($content['group_right']['field_ding_blog_category']); ?>
       <div class="section meta">
         <div class="author"><?php print t("By"); ?> <?php print $author; ?></div>
-        <div class="created"><?php print $blog_submitted ?>
-        </div>
+        <div class="created"><?php print $blog_submitted; ?></div>
       </div>
       <?php print render($content['group_right']); ?>
     </div>
-    <?php if ($materials): ?>
-      <?php print render($materials_view); ?>
-    <?php endif; ?>
   </div>
 </article>
