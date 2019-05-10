@@ -147,6 +147,12 @@ article.node-blog {
     line-height: 24px;
   }
 }
+.node-blog h2 {
+  font-family: "FaktPro-SemiBold", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 20px 0 5px;
+}
 .node-blog .meta {
   padding: 10px 0;
   border-top: 1px solid #ccc;
@@ -286,7 +292,6 @@ article.node-blog {
   }
 }
 .node-blog .ding-blog-inner > .field-name-field-ding-blog-materials > .field-items > .field-item {
-  width: 100%;
   float: left;
   display: block;
   margin-right: 2.4911%;
@@ -330,12 +335,6 @@ article.node-blog {
     width: 100%;
     margin-right: 0;
   }
-}
-.node-blog .ding-blog-inner > .field-name-field-ding-blog-materials > .field-items > .field-item .ting-object {
-  width: calc(25% - 10px);
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 10px;
 }
 .group-right .field-name-field-ding-blog-materials {
   float: left;

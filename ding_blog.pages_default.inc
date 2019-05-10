@@ -228,7 +228,7 @@ function ding_blog_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -20;
+  $handler->weight = 3;
   $handler->conf = array(
     'title' => 'Blog',
     'no_blocks' => 0,
@@ -425,6 +425,231 @@ function ding_blog_default_page_manager_handlers() {
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view__blog'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'node_view__blog-alternative-layout';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'panel_context';
+  $handler->weight = 2;
+  $handler->conf = array(
+    'title' => 'Blog alternative layout',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => NULL,
+        'id' => 1,
+      ),
+    ),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'Taxonomy term from Node (on Node: Category [field_ding_blog_category])',
+        'keyword' => 'taxonomy_term',
+        'name' => 'entity_from_field:field_ding_blog_category-node-taxonomy_term',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'blog' => 'blog',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'entity_field_value:node:blog:field_ding_blog_show_as_list',
+          'settings' => array(
+            'field_ding_blog_show_as_list' => array(
+              'und' => array(
+                0 => array(
+                  'value' => 1,
+                ),
+              ),
+            ),
+            'field_ding_blog_show_as_list_value' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
+    'panels_breadcrumbs_state' => 1,
+    'panels_breadcrumbs_titles' => 'Blogs
+%node:title',
+    'panels_breadcrumbs_paths' => 'blog
+<none>',
+    'metatag_panels' => array(
+      'enabled' => 1,
+      'metatags' => array(
+        'title' => array(
+          'value' => '[node:title] | [current-page:pager][site:name]',
+        ),
+        'image_src' => array(
+          'value' => '[node:field_ding_blog_list_image]',
+        ),
+      ),
+    ),
+    'name' => 'blog-alternative-layout',
+    'panels_breadcrumbs_home' => 1,
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+  );
+  $display = new panels_display();
+  $display->layout = '25_50_25';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'left' => NULL,
+      'middle' => NULL,
+      'right' => NULL,
+      'top' => NULL,
+      'bottom' => NULL,
+      'grid_10_center' => NULL,
+      'grid_3_left' => NULL,
+      'grid_3_right' => NULL,
+      'left_sidebar' => NULL,
+      'main_content' => NULL,
+      'right_sidebar' => NULL,
+      'attachment_4_1' => NULL,
+      'attachment_4_2' => NULL,
+      'attachment_4_3' => NULL,
+      'attachment_4_4' => NULL,
+      'attachment_3_1' => NULL,
+      'attachment_3_2' => NULL,
+      'attachment_3_3' => NULL,
+      'attachment_2_1' => NULL,
+      'attachment_2_2' => NULL,
+      'attachment_1_1' => NULL,
+      'branding' => NULL,
+      'header' => NULL,
+      'navigation' => NULL,
+      'content' => NULL,
+      'footer' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '%node:title';
+  $display->uuid = '45175b89-df7a-48fe-8118-cb87907dc9df';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view__blog-alternative-layout';
+  $display->content = array();
+  $display->panels = array();
+  $pane = new stdClass();
+  $pane->pid = 'new-a6229377-5925-4728-a26a-48d1d33263ee';
+  $pane->panel = 'attachment_1_1';
+  $pane->type = 'node_content';
+  $pane->subtype = 'node_content';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'links' => 1,
+    'no_extras' => 0,
+    'override_title' => 0,
+    'override_title_text' => '',
+    'identifier' => '',
+    'link' => 0,
+    'leave_node_title' => 1,
+    'build_mode' => 'alternative_layout_full',
+    'context' => 'argument_entity_id:node_1',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array(
+    'method' => '0',
+    'settings' => array(),
+  );
+  $pane->style = array(
+    'settings' => NULL,
+    'style' => 'naked',
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 0;
+  $pane->locks = '';
+  $pane->uuid = 'a6229377-5925-4728-a26a-48d1d33263ee';
+  $display->content['new-a6229377-5925-4728-a26a-48d1d33263ee'] = $pane;
+  $display->panels['attachment_1_1'][0] = 'new-a6229377-5925-4728-a26a-48d1d33263ee';
+  $pane = new stdClass();
+  $pane->pid = 'new-f5f0e077-0b1b-4a1a-a49a-0539f280450f';
+  $pane->panel = 'attachment_1_1';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'ding_blog-related_author_blogs';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+    'link_to_view' => 0,
+    'fields_override' => array(
+      'title' => 0,
+      'uid' => 1,
+    ),
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 1;
+  $pane->locks = array();
+  $pane->uuid = 'f5f0e077-0b1b-4a1a-a49a-0539f280450f';
+  $display->content['new-f5f0e077-0b1b-4a1a-a49a-0539f280450f'] = $pane;
+  $display->panels['attachment_1_1'][1] = 'new-f5f0e077-0b1b-4a1a-a49a-0539f280450f';
+  $pane = new stdClass();
+  $pane->pid = 'new-2b7cdd26-b05d-48f5-a12e-f72f0fee2675';
+  $pane->panel = 'attachment_1_1';
+  $pane->type = 'views_panes';
+  $pane->subtype = 'ding_blog-related_category_blogs';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'context' => array(
+      0 => 'relationship_entity_from_field:field_ding_blog_category-node-taxonomy_term_1',
+      1 => 'argument_entity_id:node_1',
+    ),
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 2;
+  $pane->locks = array();
+  $pane->uuid = '2b7cdd26-b05d-48f5-a12e-f72f0fee2675';
+  $display->content['new-2b7cdd26-b05d-48f5-a12e-f72f0fee2675'] = $pane;
+  $display->panels['attachment_1_1'][2] = 'new-2b7cdd26-b05d-48f5-a12e-f72f0fee2675';
+  $display->hide_title = PANELS_TITLE_PANE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $export['node_view__blog-alternative-layout'] = $handler;
 
   return $export;
 }
