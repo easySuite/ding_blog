@@ -22,7 +22,7 @@ function ding_blog_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -50,6 +50,12 @@ function ding_blog_field_default_field_instances() {
         'weight' => 3,
       ),
       'teaser_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_no_overlay' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -89,7 +95,7 @@ function ding_blog_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -113,6 +119,12 @@ function ding_blog_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_no_overlay' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -192,6 +204,12 @@ function ding_blog_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teaser_no_overlay' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ding_blog_list_image',
@@ -263,7 +281,7 @@ function ding_blog_field_default_field_instances() {
           'view_mode' => 'reference_teaser',
         ),
         'type' => 'ting_reference_default',
-        'weight' => 6,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -292,6 +310,12 @@ function ding_blog_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teaser_no_overlay' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ding_blog_materials',
@@ -306,6 +330,72 @@ function ding_blog_field_default_field_instances() {
       'settings' => array(),
       'type' => 'ting_reference_advanced',
       'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-blog-field_ding_blog_show_as_list'.
+  $field_instances['node-blog-field_ding_blog_show_as_list'] = array(
+    'bundle' => 'blog',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'alternative_layout_full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_no_overlay' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ding_blog_show_as_list',
+    'label' => 'Show as material list',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 42,
     ),
   );
 
@@ -345,6 +435,12 @@ function ding_blog_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_no_overlay' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -404,6 +500,12 @@ function ding_blog_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser_highlight' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser_no_overlay' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -470,6 +572,12 @@ function ding_blog_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teaser_no_overlay' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ding_news_blogs',
@@ -529,6 +637,12 @@ function ding_blog_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'teaser_no_overlay' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
     ),
     'entity_type' => 'node',
     'field_name' => 'field_ding_news_blogs_headline',
@@ -557,6 +671,7 @@ function ding_blog_field_default_field_instances() {
   t('List image');
   t('Materials');
   t('Related blogs');
+  t('Show as material list');
 
   return $field_instances;
 }
