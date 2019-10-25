@@ -90,6 +90,10 @@ function ding_blog_strongarm() {
             'weight' => '0',
             'visible' => TRUE,
           ),
+          'alternative_layout_full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),
