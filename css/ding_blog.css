@@ -129,9 +129,9 @@ article.node-blog {
 }
 
 .node-blog {
-  background-color: #fff;
-  background-image: -webkit-linear-gradient(bottom, #fff 30px, #f1f2f2 100%);
-  background-image: linear-gradient(to top,#fff 30px, #f1f2f2 100%);
+  background-color: rgba(255, 255, 255, 0);
+  background-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0) 30px, #f1f2f2 100%);
+  background-image: linear-gradient(to top,rgba(255, 255, 255, 0) 30px, #f1f2f2 100%);
   margin: 40px 0 30px;
 }
 .node-blog h1 {
@@ -385,8 +385,8 @@ article.node-blog {
   float: left;
   display: block;
   margin-right: 2.4911%;
-  width: 31.24555%;
-  margin: 0 10px 40px 10px;
+  width: 29.02491%;
+  margin: 2%;
 }
 .ding_nodelist-node_blocks .ding_nodelist-items .item:last-child,
 .ding_nodelist-node_blocks .view-content .item:last-child,
