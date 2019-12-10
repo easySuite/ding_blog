@@ -385,8 +385,8 @@ article.node-blog {
   float: left;
   display: block;
   margin-right: 2.4911%;
-  width: 31.24555%;
-  margin: 0 10px 40px 10px;
+  width: 29.11032%;
+  margin: 1%;
 }
 .ding_nodelist-node_blocks .ding_nodelist-items .item:last-child,
 .ding_nodelist-node_blocks .view-content .item:last-child,
@@ -415,24 +415,6 @@ article.node-blog {
 .pane-ding-blog-related-category-blogs .view-content .item,
 .pane-ding-blog-related-category-blogs .view-content .node {
   position: relative;
-}
-.ding_nodelist-node_blocks .ding_nodelist-items .item :last-child,
-.ding_nodelist-node_blocks .ding_nodelist-items .node :last-child,
-.ding_nodelist-node_blocks .view-content .item :last-child,
-.ding_nodelist-node_blocks .view-content .node :last-child,
-.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item :last-child,
-.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node :last-child,
-.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item :last-child,
-.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node :last-child,
-.pane-ding-blog-related-author-blogs .ding_nodelist-items .item :last-child,
-.pane-ding-blog-related-author-blogs .ding_nodelist-items .node :last-child,
-.pane-ding-blog-related-author-blogs .view-content .item :last-child,
-.pane-ding-blog-related-author-blogs .view-content .node :last-child,
-.pane-ding-blog-related-category-blogs .ding_nodelist-items .item :last-child,
-.pane-ding-blog-related-category-blogs .ding_nodelist-items .node :last-child,
-.pane-ding-blog-related-category-blogs .view-content .item :last-child,
-.pane-ding-blog-related-category-blogs .view-content .node :last-child {
-  margin-right: -10px;
 }
 @media only screen and (max-width: 1080px) {
   .ding_nodelist-node_blocks .ding_nodelist-items .item,
@@ -559,6 +541,25 @@ article.node-blog {
   .pane-ding-blog-related-category-blogs .view-content .node:last-child {
     margin-right: 0;
   }
+}
+.ding_nodelist-node_blocks .ding_nodelist-items .item .inner,
+.ding_nodelist-node_blocks .ding_nodelist-items .node .inner,
+.ding_nodelist-node_blocks .view-content .item .inner,
+.ding_nodelist-node_blocks .view-content .node .inner,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .item .inner,
+.panel-pane.pane-ding-blog-ding-blog-list-user .ding_nodelist-items .node .inner,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .item .inner,
+.panel-pane.pane-ding-blog-ding-blog-list-user .view-content .node .inner,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .item .inner,
+.pane-ding-blog-related-author-blogs .ding_nodelist-items .node .inner,
+.pane-ding-blog-related-author-blogs .view-content .item .inner,
+.pane-ding-blog-related-author-blogs .view-content .node .inner,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .item .inner,
+.pane-ding-blog-related-category-blogs .ding_nodelist-items .node .inner,
+.pane-ding-blog-related-category-blogs .view-content .item .inner,
+.pane-ding-blog-related-category-blogs .view-content .node .inner {
+  float: left;
+  width: 100%;
 }
 .ding_nodelist-node_blocks .ding_nodelist-items .item.node-blog .field-name-field-blog-body p,
 .ding_nodelist-node_blocks .ding_nodelist-items .node.node-blog .field-name-field-blog-body p,
