@@ -75,5 +75,6 @@ features[user_permission][] = edit own blog content
 features[user_permission][] = view any unpublished blog content
 features[variable][] = field_bundle_settings_node__blog
 features[variable][] = pathauto_blog_pattern
+features[variable][] = pathauto_node_blog_pattern
 features[views_view][] = ding_blog
 project path = profiles/ding2/modules
