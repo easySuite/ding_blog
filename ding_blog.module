@@ -119,29 +119,28 @@ function ding_blog_panels_pane_content_alter($content, $pane, $args, $contexts) 
  */
 function ding_blog_preprocess__node__blog(&$variables) {
   $variables['blog_submitted'] = format_date($variables['created'], 'ding_date_only_version2');
+  $query = db_select('field_data_field_ding_staff_forename', 'staff');
+  $query->innerJoin('profile', 'p', 'p.pid=staff.entity_id');
+  $query->fields('staff', array('field_ding_staff_forename_value'))
+    ->condition('p.uid', $variables['uid']);
+  $forename = $query->execute()->fetchField();
+
+  $query = db_select('field_data_field_ding_staff_surname', 'staff');
+  $query->innerJoin('profile', 'p', 'p.pid=staff.entity_id');
+  $query->fields('staff', array('field_ding_staff_surname_value'))
+    ->condition('p.uid', $variables['uid']);
+  $surname = $query->execute()->fetchField();
+
+  $author = "$forename $surname";
+  if (empty($forename) && empty($surname)) {
+    $user = user_load($variables['uid']);
+    $author = $user->name;
+  }
+  $variables['author'] = l($author, '/blog/' . $variables['uid']);
 
   switch ($variables['view_mode']) {
     case 'full':
     case 'alternative_layout_full':
-      $query = db_select('field_data_field_ding_staff_forename', 'staff');
-      $query->innerJoin('profile', 'p', 'p.pid=staff.entity_id');
-      $query->fields('staff', array('field_ding_staff_forename_value'))
-        ->condition('p.uid', $variables['uid']);
-      $forename = $query->execute()->fetchField();
-
-      $query = db_select('field_data_field_ding_staff_surname', 'staff');
-      $query->innerJoin('profile', 'p', 'p.pid=staff.entity_id');
-      $query->fields('staff', array('field_ding_staff_surname_value'))
-        ->condition('p.uid', $variables['uid']);
-      $surname = $query->execute()->fetchField();
-
-      $author = "$forename $surname";
-      if (empty($forename) && empty($surname)) {
-        $user = user_load($variables['uid']);
-        $author = $user->name;
-      }
-      $variables['author'] = l($author, '/blog/' . $variables['uid']);
-
       $variables['materials'] = field_get_items('node', $variables['node'], 'field_ding_blog_materials');
       break;
     case 'teaser':
@@ -157,12 +156,20 @@ function ding_blog_preprocess__node__blog(&$variables) {
           $current_view = $variables['view']->current_display;
         }
         $views_with_large_first = array('ding_blog_frontpage_list');
+
+        $img_url = image_style_url('ding_panorama_list_large', $uri);
         if (in_array($current_view, $views_with_large_first) && $variables['view']->result[0]->nid == $variables['nid']) {
           $img_url = image_style_url('ding_panorama_list_large_wide', $uri);
           $variables['classes_array'][] = 'ding-blog-highlighted';
         }
-        else {
-          $img_url = image_style_url('ding_panorama_list_large', $uri);
+        if ($current_view == 'related_category_blogs') {
+          $query = db_select('field_data_field_ding_staff_image', 'staff');
+          $query->innerJoin('profile', 'p', 'p.pid=staff.entity_id');
+          $query->fields('staff', array('field_ding_staff_image_fid'))
+            ->condition('p.uid', $variables['uid']);
+          $fid = $query->execute()->fetchField();
+          $file = file_load($fid);
+          $img_url = file_create_url($file->uri);
         }
         if (!empty($image_title)) {
           $variables['blog_teaser_image'] = '<div class="ding-blog-list-image background-image-styling-16-9" style="background-image:url(' . $img_url . ')" title="' . $image_title . '"></div>';

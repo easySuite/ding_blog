@@ -97,6 +97,7 @@
           <?php print render($content['field_editorial_base']); ?>
         <?php endif; ?>
         <div class="submitted"><?php print $blog_submitted; ?></div>
+        <div class="author"><?php print $author; ?></div>
       </div>
       <div class="summary">
         <?php print render($summary);  ?>
