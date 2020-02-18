@@ -187,12 +187,12 @@ function ding_blog_field_default_field_instances() {
         'settings' => array(
           'image_link' => '',
           'styles' => array(
-            'breakpoint_1' => 768,
+            'breakpoint_1' => 950,
             'breakpoint_2' => 500,
-            'fallback_style' => 'ding_list_large',
-            'max_style' => 'ding_list_large',
-            'style_1' => 'ding_list_medium',
-            'style_2' => 'ding_list_small',
+            'fallback_style' => 'ding_panorama_list_medium',
+            'max_style' => 'ding_panorama_list_medium',
+            'style_1' => 'ding_panorama_list_large',
+            'style_2' => 'ding_panorama_list_medium',
           ),
         ),
         'type' => 'cs_adaptive_image',

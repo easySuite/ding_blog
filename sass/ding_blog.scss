@@ -64,7 +64,7 @@ article.node-blog {
 }
 
 .node-blog {
-  @include linear-gradient(to top, $white 30px, $grey-light 100%);
+  @include linear-gradient(to top, rgba(255, 255, 255, 0) 30px, $grey-light 100%);
   margin: 40px 0 30px;
   h1 {
     @include font('display');
@@ -221,7 +221,8 @@ article.node-blog {
 .ding_nodelist-node_blocks,
 .panel-pane.pane-ding-blog-ding-blog-list-user,
 .pane-ding-blog-related-author-blogs,
-.pane-ding-blog-related-category-blogs {
+.pane-ding-blog-related-category-blogs,
+.view-ding-blog {
   width: 100%;
   float: left;
   .ding_nodelist-items,
@@ -230,18 +231,13 @@ article.node-blog {
     width: 100%;
 
     .item {
-      @include span-columns(3.95 of 12);
-      margin: 0 10px 40px 10px;
+      @include span-columns(3.69 of 12);
+      margin: 2%;
     }
 
     .item,
     .node {
       position: relative;
-
-      :last-child {
-        margin-right: -10px;
-      }
-
       @media only screen and (max-width: 1080px) {
         @include span-columns(5.5 of 12);
       }
@@ -256,7 +252,10 @@ article.node-blog {
         float: none;
         padding-bottom: 15px;
       }
-
+      .inner {
+        float: left;
+        width: 100%;
+      }
       &.node-blog .field-name-field-blog-body p {
         margin-top: 25px;
       }
