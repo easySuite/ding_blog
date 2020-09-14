@@ -79,6 +79,21 @@ function ding_blog_preprocess_node(&$variables) {
 }
 
 /**
+ * Implements hook_field_group_pre_render_alter().
+ *
+ * Tricky workaround to get blog posts referenced to an event rendered.
+ */
+function ding_blog_field_group_pre_render_alter(&$element, $group, & $form) {
+  if ($group->bundle == 'ding_event' && $group->group_name == 'group_right') {
+    $node = $form['#node'];
+    $rendered_blogs_field = render($node->content["field_ding_event_blogs"]);
+
+    // Append rendered blog markup after group_right.
+    $element['#suffix'] .= $rendered_blogs_field;
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function ding_blog_preprocess_ding2_site_template(&$variables) {
